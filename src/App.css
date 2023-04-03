@@ -1,38 +1,434 @@
-.App {
+.app {
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(to bottom, #454444, #3d3d3d, #363434, #1f1e1e); */
+  /* color: rgb(223, 221, 221); */
+
+  overflow-x: hidden;
+}
+.app::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header styles start */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  z-index: 101;
+  background-color: aliceblue;
+}
+.inputBox {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+  padding: 8px 15px;
+  border-radius: 25px;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.15);
+  width: 120px;
+}
+.inputBox .searchIcon {
+  font-size: 20px;
+  color: #787e84;
+}
+.inputBox input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #787e84;
+  padding-left: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profileContainer .userName {
+  font-size: 16px;
+  margin-left: 8px;
+  font-weight: 500;
+  display: none;
+}
+.shoppingCart {
+  position: relative;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.shoppingCart .cart {
+  font-size: 25px;
+  color: #5d5d5f;
+}
+.shoppingCart .cart_content {
+  width: 18px;
+  height: 18px;
+  background-color: blue;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  padding: 5px;
+
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+}
+.profileContainer .imgBox {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+}
+.profilePic {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Header styles ends */
+
+/*Buttom menu section */
+
+.bottomMenu {
+  background-color: aliceblue;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  border-radius: 25px 25px 0 0;
+}
+.bottomMenu ul {
+  display: flex;
+}
+.bottomMenu ul li {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+}
+.icons {
+  position: relative;
+  display: block;
   text-align: center;
+  line-height: 70px;
+  transition: 0.5s;
+  color: rgb(118, 118, 119);
+}
+.bottomMenu ul li:hover .icons .MuiSvgIcon-root {
+  transform: translateY(-10px);
+  color: #283848;
+  transition: 0.5s;
+}
+/* Main Section Styles start */
+
+.main {
+  width: 100%;
+  height: auto;
+  background-color: #555;
+  margin-top: 60px;
+}
+/* Main Section Styles end */
+
+/*Banner section styles start*/
+.banner {
+  max-height: 15rem;
+  background-color: yellow;
+}
+.carouselMain {
+  margin-top: 4rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.carouselImg img {
+  height: 13rem;
+  object-fit: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 800px) {
+  .banner {
+    margin: auto;
+    max-height: 25rem;
+    width: 90%;
+  }
+  .carouselImg img {
+    height: 25rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*Banner section styles end*/
+
+/* dish container */
+
+.dishContainer {
+  margin-top: -3rem;
+  width: 100%;
+  padding: 10px 0;
+}
+.subMenuContainer {
+  margin: 0 1rem;
+}
+
+.menuCard {
+  width: 100%;
+}
+
+.subMenuContainer,
+.viewAll {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subMenuContainer h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a2b3c;
+}
+.subMenuContainer .viewAll p {
+  font-size: 12px;
+  color: #2a2b3c;
+  font-weight: 400;
+}
+
+.viewAll i {
+  background-color: #e0ecf8;
+  margin: 0 5px;
+  height: 20px;
+  width: 20px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: rgb(41, 39, 39);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.viewAll i:hover {
+  background-color: rgb(50, 142, 234);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.rowContainer {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: 10px 0;
+  padding: 10px 0;
+  margin-left: 1rem;
+}
+.rowContainer::-webkit-scrollbar {
+  display: none;
+}
+.rowMenuCard {
+  width: 80px;
+  min-width: 80px;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
+  margin-right: 12px;
+  border: rgba(0, 0, 0, 0.4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rowMenuCard .imgBox {
+  width: 60px;
+  height: 40px;
+  min-height: 40px;
+  border-radius: 100vw;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.rowMenuCard .imgBox img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.rowMenuCard h3 {
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+.rowMenuCard .loadMenu {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.loadMenu {
+  background-color: #e0ecf8;
+  margin: 0 5px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(41, 39, 39);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rowMenuCard:hover,
+.rowMenuCard.active {
+  background-color: rgb(253, 253, 253);
+}
+.rowMenuCard:hover .imgBox img,
+.rowMenuCard.active .imgBox img {
+  width: 120%;
+  height: 120%;
+  transition: 0.5s;
+}
+.rowMenuCard:hover .loadMenu,
+.rowMenuCard.active .loadMenu {
+  background-color: rgb(50, 142, 234);
+  color: white;
+}
+
+.dishItemContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.itemCard {
+  width: 180px;
+  height: 180px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+
+.itemCard .imgBox2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+}
+
+.imgBox2 img {
+  border-radius: 20%;
+}
+
+.itemContent {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 10px;
+
+  padding-top: 50px;
+}
+
+.itemContent .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itemContent .bottom .price {
+  font-size: 16px;
+}
+
+.itemContent .bottom .price span {
+  color: rgb(17, 17, 32);
+  font-size: 12px;
+}
+
+.itemContent .addToCart {
+  background: #6d59ec;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.itemContent .addToCart .MuiSvgIcon-root {
+  color: #faf9fb;
+  font-size: 16px;
+}
+
+.itemContent .bottom .rating .MuiSvgIcon-root {
+  font-size: 14px;
+}
+.isFavourite {
+  position: absolute;
+  top: 105px;
+  right: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.isFavourite .MuiSvgIcon-root {
+  font-size: 18px;
+  color: #f59a9a88;
+}
+
+.isFavourite.active .MuiSvgIcon-root {
+  color: #ff0000;
+  filter: drop-shadow(0px 0px 8px #ff0000);
+}
+.orange {
+  color: #f8901c !important;
+}
+
+.gray {
+  color: #373848 !important;
+}
+.itemName {
+  margin-bottom: 1rem;
 }
